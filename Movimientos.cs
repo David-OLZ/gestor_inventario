@@ -1,3 +1,4 @@
+using Microsoft.Data.SqlClient;
 using System;
 using System.Data;
 using System.Drawing;
@@ -7,49 +8,89 @@ namespace Practica
 {
     public class Movimientos : Form
     {
-        private DataGridView dgv;
+        private readonly DataGridView dgv;
+
+        private const string ConnectionString =
+            "Data Source=LAPTOP-HP-DAVID\\SQLEXPRESS;" +
+            "Initial Catalog=prueba;" +
+            "Integrated Security=True;" +
+            "TrustServerCertificate=True";
 
         public Movimientos()
         {
-            InitializeComponent();
-        }
+            Text = "Movimientos del inventario";
+            ClientSize = new Size(800, 450);
+            MinimumSize = new Size(650, 350);
+            StartPosition = FormStartPosition.CenterParent;
 
-        private void InitializeComponent()
-        {
-            this.Text = "Movimientos";
-            this.ClientSize = new Size(700, 400);
-            this.StartPosition = FormStartPosition.CenterParent;
-
-            dgv = new DataGridView()
+            dgv = new DataGridView
             {
                 Dock = DockStyle.Fill,
                 ReadOnly = true,
                 AllowUserToAddRows = false,
                 AllowUserToDeleteRows = false,
-                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                AutoGenerateColumns = true,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                SelectionMode = DataGridViewSelectionMode.FullRowSelect,
+                MultiSelect = false
             };
 
-            this.Controls.Add(dgv);
-
+            Controls.Add(dgv);
             Load += Movimientos_Load;
+            Productos.ProductoCambiado += Productos_ProductoCambiado;
+            FormClosed += Movimientos_FormClosed;
+        }
+
+        private void Productos_ProductoCambiado(object? sender, EventArgs e)
+        {
+            if (!IsDisposed)
+                CargarMovimientos();
+        }
+
+        private void Movimientos_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            Productos.ProductoCambiado -= Productos_ProductoCambiado;
         }
 
         private void Movimientos_Load(object? sender, EventArgs e)
         {
-            // Ejemplo: crear una tabla con movimientos y enlazarla al DataGridView.
-            var table = new DataTable();
-            table.Columns.Add("Id", typeof(int));
-            table.Columns.Add("Fecha", typeof(DateTime));
-            table.Columns.Add("Tipo", typeof(string));
-            table.Columns.Add("Producto", typeof(string));
-            table.Columns.Add("Cantidad", typeof(decimal));
+            CargarMovimientos();
+        }
 
-            // Filas de ejemplo
-            table.Rows.Add(1, DateTime.Now.AddDays(-2), "Entrada", "Producto A", 10);
-            table.Rows.Add(2, DateTime.Now.AddDays(-1), "Salida", "Producto B", 3);
-            table.Rows.Add(3, DateTime.Now, "Entrada", "Producto C", 7);
+        private void CargarMovimientos()
+        {
+            const string sql = """
+                SELECT
+                    m.ID_Movimiento AS [ID movimiento],
+                    m.Fecha_Hora AS [Fecha],
+                    tm.Nombre_Tipo AS [Tipo de movimiento],
+                    COALESCE(m.Nombre_Producto, p.Nombre) AS [Producto],
+                    COALESCE(m.Nombre_Proveedor, pr.Nombre_Empresa, 'Proveedor no disponible') AS [Proveedor]
+                FROM MOVIMIENTO_INVENTARIO m
+                INNER JOIN TIPO_MOVIMIENTO tm ON m.ID_Tipo = tm.ID_Tipo
+                LEFT JOIN PRODUCTO p ON m.ID_Producto = p.ID_Producto
+                LEFT JOIN PROVEEDORES pr ON p.ID_Proveedor = pr.ID_Proveedor
+                ORDER BY m.ID_Movimiento DESC;
+                """;
 
-            dgv.DataSource = table;
+            try
+            {
+                using SqlConnection conexion = new(ConnectionString);
+                using SqlCommand comando = new(sql, conexion);
+                using SqlDataAdapter adaptador = new(comando);
+
+                DataTable tabla = new();
+                adaptador.Fill(tabla);
+                dgv.DataSource = tabla;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(
+                    "Error al consultar los movimientos:\n" + ex.Message,
+                    "Error de SQL Server",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

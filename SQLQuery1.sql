@@ -1,6 +1,7 @@
 -- ==========================================================
 -- SCRIPT DE CREACION DE BASE DE DATOS: prueba
 -- ==========================================================
+DROP DATABASE prueba;
 
 IF DB_ID('prueba') IS NOT NULL
 BEGIN
@@ -106,14 +107,16 @@ CREATE TABLE MOVIMIENTO_INVENTARIO (
     Cantidad INT NOT NULL,
     Fecha_Hora DATETIME NOT NULL DEFAULT GETDATE(),
     Motivo VARCHAR(200) NOT NULL,
-    ID_Producto INT NOT NULL,
+    ID_Producto INT NULL,
+    Nombre_Producto VARCHAR(100) NOT NULL,
+    Nombre_Proveedor VARCHAR(100) NULL,
     ID_Empleado INT NOT NULL,
     ID_Tipo INT NOT NULL,
     CONSTRAINT CHK_Movimiento_Cantidad CHECK (Cantidad > 0),
     CONSTRAINT FK_Movimiento_Producto FOREIGN KEY (ID_Producto)
         REFERENCES PRODUCTO(ID_Producto)
         ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
+        ON DELETE SET NULL,
     CONSTRAINT FK_Movimiento_Empleado FOREIGN KEY (ID_Empleado)
         REFERENCES EMPLEADO(ID_Empleado)
         ON UPDATE NO ACTION
@@ -126,58 +129,7 @@ CREATE TABLE MOVIMIENTO_INVENTARIO (
 GO
 
 -- ==========================================================
--- 2. TRIGGER: CONTROL AUTOMATICO DE EXISTENCIAS Y STOCK NEGATIVO
--- ==========================================================
-
-CREATE TRIGGER trg_ControlExistencias
-ON MOVIMIENTO_INVENTARIO
-AFTER INSERT
-AS
-BEGIN
-    SET NOCOUNT ON;
-
-    -- Evitar que una salida deje el inventario en negativo
-    IF EXISTS (
-        SELECT 1
-        FROM inserted i
-        INNER JOIN TIPO_MOVIMIENTO tm ON i.ID_Tipo = tm.ID_Tipo
-        INNER JOIN PRODUCTO p ON i.ID_Producto = p.ID_Producto
-        WHERE tm.Nombre_Tipo = 'Salida' AND p.Stock_Actual < i.Cantidad
-    )
-    BEGIN
-        RAISERROR('Stock insuficiente para realizar la salida solicitada.', 16, 1);
-        ROLLBACK TRANSACTION;
-        RETURN;
-    END
-
-    -- Sumar existencias en Entrada o Devolucion
-    UPDATE p
-    SET p.Stock_Actual = p.Stock_Actual + i.Cantidad
-    FROM PRODUCTO p
-    INNER JOIN inserted i ON p.ID_Producto = i.ID_Producto
-    INNER JOIN TIPO_MOVIMIENTO tm ON i.ID_Tipo = tm.ID_Tipo
-    WHERE tm.Nombre_Tipo IN ('Entrada', 'Devolucion');
-
-    -- Restar existencias en Salida
-    UPDATE p
-    SET p.Stock_Actual = p.Stock_Actual - i.Cantidad
-    FROM PRODUCTO p
-    INNER JOIN inserted i ON p.ID_Producto = i.ID_Producto
-    INNER JOIN TIPO_MOVIMIENTO tm ON i.ID_Tipo = tm.ID_Tipo
-    WHERE tm.Nombre_Tipo = 'Salida';
-
-    -- Reemplazar existencias en Ajuste tras revision fisica
-    UPDATE p
-    SET p.Stock_Actual = i.Cantidad
-    FROM PRODUCTO p
-    INNER JOIN inserted i ON p.ID_Producto = i.ID_Producto
-    INNER JOIN TIPO_MOVIMIENTO tm ON i.ID_Tipo = tm.ID_Tipo
-    WHERE tm.Nombre_Tipo = 'Ajuste';
-END;
-GO
-
--- ==========================================================
--- 3. FUNCION DEFINIDA POR EL USUARIO (UDF)
+-- 2. FUNCION DEFINIDA POR EL USUARIO (UDF)
 -- ==========================================================
 
 -- Calcula el valor monetario total en almacen de un producto especifico
@@ -196,7 +148,7 @@ END;
 GO
 
 -- ==========================================================
--- 4. PROCEDIMIENTO ALMACENADO CON CURSOR
+-- 3. PROCEDIMIENTO ALMACENADO CON CURSOR
 -- ==========================================================
 
 -- Recorre los productos con stock menor o igual al minimo para generar alertas de resurtido
@@ -264,10 +216,9 @@ INSERT INTO ROL (Nombre_Rol) VALUES
 ('Almacenista');
 
 INSERT INTO TIPO_MOVIMIENTO (Nombre_Tipo) VALUES
-('Entrada'),
-('Salida'),
-('Ajuste'),
-('Devolucion');
+('insertar'),
+('eliminar'),
+('modificar');
 
 INSERT INTO CATEGORIA (ID_Categoria, Nombre, Descripcion) VALUES
 (1, 'Herramientas Manuales', 'Martillos, desarmadores, llaves y pinzas'),
@@ -293,12 +244,14 @@ INSERT INTO PRODUCTO (Codigo_SKU, Nombre, Descripcion, Precio, Stock_Actual, Sto
 ('SKU-HER-004', 'Juego Desarmadores 6 Piezas', 'Punta plana y cruz magnetica', 320.00, 18, 8, 1, 1),
 ('SKU-TMP-005', 'Producto Prueba Cascada', 'Articulo de prueba para eliminacion en cascada', 50.00, 10, 2, 1, 4);
 
--- Movimientos iniciales (el trigger actualiza Stock_Actual automaticamente)
-INSERT INTO MOVIMIENTO_INVENTARIO (Cantidad, Motivo, ID_Producto, ID_Empleado, ID_Tipo) VALUES
-(15, 'Compra mensual de reposicion', 1, 1, 1),     -- Entrada: stock pasa de 25 a 40
-(7, 'Entrega a cuadrilla de obra', 2, 2, 2),      -- Salida: stock pasa de 12 a 5 (activa alerta de stock bajo)
-(2, 'Devolucion por cliente', 4, 2, 4),           -- Devolucion: stock pasa de 18 a 20
-(6, 'Conteo fisico semanal', 3, 1, 3);            -- Ajuste: stock pasa de 4 a 6 (sigue debajo del minimo de 15)
+-- Movimientos iniciales de auditoria de productos
+INSERT INTO MOVIMIENTO_INVENTARIO
+    (Cantidad, Motivo, ID_Producto, Nombre_Producto, ID_Empleado, ID_Tipo)
+VALUES
+(1, 'Registro inicial del producto', 1, 'Martillo de Una 16 oz', 1, 1),
+(1, 'Modificacion inicial del producto', 2, 'Rollo Cable Calibre 12', 1, 3),
+(1, 'Registro inicial del producto', 3, 'Caja Tornillo Tabla Roca 1 pulg', 1, 1),
+(1, 'Registro inicial del producto', 4, 'Juego Desarmadores 6 Piezas', 1, 1);
 GO
 
 
@@ -335,7 +288,7 @@ SELECT
     m.ID_Movimiento,
     m.Fecha_Hora,
     tm.Nombre_Tipo AS Tipo,
-    p.Nombre AS Producto,
+    COALESCE(m.Nombre_Producto, p.Nombre) AS Producto,
     m.Cantidad,
     m.Motivo,
     e.Nombre + ' ' + e.Apellido AS Empleado

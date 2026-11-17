@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.Net.Mail;
 using System.Windows.Forms;
 
 namespace Practica
@@ -9,6 +10,12 @@ namespace Practica
     public partial class Proveedores : Form
     {
         private readonly DataGridView dgvProveedores;
+
+        private TextBox txtBusqueda = null!;
+        private TextBox txtNombreEmpresa = null!;
+        private TextBox txtRfc = null!;
+        private TextBox txtTelefono = null!;
+        private TextBox txtCorreo = null!;
 
         private const string ConnectionString =
             "Data Source=LAPTOP-HP-DAVID\\SQLEXPRESS;" +
@@ -20,11 +27,12 @@ namespace Practica
         {
             InitializeComponent();
 
-            // Cambiar el botón Actualizar por Buscar
-            button2.Text = "&Buscar";
-            button2.Click += BuscarClick;
+            // Se reemplazan los controles antiguos por los nuevos campos.
+            groupBox1.Controls.Clear();
+            groupBox1.Size = new Size(700, 210);
 
-            // Crear la lista de proveedores
+            CrearCampos();
+
             dgvProveedores = new DataGridView
             {
                 Name = "dgvProveedores",
@@ -43,10 +51,105 @@ namespace Practica
                 MultiSelect = false
             };
 
+            dgvProveedores.CellClick += DgvProveedores_CellClick;
+
             Controls.Add(dgvProveedores);
 
-            // Ajustar el tamaño inicial del formulario
             ClientSize = new Size(760, 580);
+        }
+
+        private void CrearCampos()
+        {
+            Label CrearEtiqueta(string texto, int x, int y)
+            {
+                return new Label
+                {
+                    Text = texto,
+                    AutoSize = true,
+                    Location = new Point(x, y)
+                };
+            }
+
+            TextBox CrearTextBox(int x, int y, int ancho = 230)
+            {
+                return new TextBox
+                {
+                    Location = new Point(x, y),
+                    Size = new Size(ancho, 23)
+                };
+            }
+
+            groupBox1.Text = "Datos del proveedor";
+
+            Label lblBusqueda = CrearEtiqueta("Buscar ID:", 20, 25);
+            txtBusqueda = CrearTextBox(140, 21, 180);
+
+            Button btnBuscar = new()
+            {
+                Text = "&Buscar",
+                Location = new Point(335, 20),
+                Size = new Size(85, 28)
+            };
+            btnBuscar.Click += BuscarClick;
+
+            Label lblNombre = CrearEtiqueta("Nombre empresa:", 20, 65);
+            txtNombreEmpresa = CrearTextBox(140, 61);
+
+            Label lblRfc = CrearEtiqueta("RFC/NIT:", 20, 100);
+            txtRfc = CrearTextBox(140, 96);
+
+            Label lblTelefono = CrearEtiqueta("Teléfono:", 390, 65);
+            txtTelefono = CrearTextBox(485, 61, 180);
+
+            Label lblCorreo = CrearEtiqueta("Correo:", 390, 100);
+            txtCorreo = CrearTextBox(485, 96, 180);
+
+            txtNombreEmpresa.MaxLength = 100;
+            txtRfc.MaxLength = 13;
+            txtTelefono.MaxLength = 15;
+            txtCorreo.MaxLength = 100;
+
+            Button btnInsertar = new()
+            {
+                Text = "&Insertar",
+                Location = new Point(220, 145),
+                Size = new Size(90, 28)
+            };
+            btnInsertar.Click += InsertarClick;
+
+            Button btnLimpiar = new()
+            {
+                Text = "&Limpiar",
+                Location = new Point(325, 145),
+                Size = new Size(90, 28)
+            };
+            btnLimpiar.Click += (_, _) => LimpiarCampos();
+
+            Button btnEliminar = new()
+            {
+                Text = "&Eliminar",
+                Location = new Point(430, 145),
+                Size = new Size(90, 28)
+            };
+            btnEliminar.Click += deleteClick;
+
+            groupBox1.Controls.AddRange(
+            [
+                lblBusqueda,
+                txtBusqueda,
+                btnBuscar,
+                lblNombre,
+                txtNombreEmpresa,
+                lblRfc,
+                txtRfc,
+                lblTelefono,
+                txtTelefono,
+                lblCorreo,
+                txtCorreo,
+                btnInsertar,
+                btnLimpiar,
+                btnEliminar
+            ]);
         }
 
         private void Proveedores_Load(object sender, EventArgs e)
@@ -54,7 +157,7 @@ namespace Practica
             CargarProveedores();
         }
 
-        private void BuscarClick(object sender, EventArgs e)
+        private void BuscarClick(object? sender, EventArgs e)
         {
             CargarProveedores();
         }
@@ -63,14 +166,23 @@ namespace Practica
         {
             const string sql = """
                 SELECT
-                    id AS ID,
-                    proveedor AS Proveedor,
-                    direccion AS Dirección,
-                    fecha_registro AS [Fecha de registro]
-                FROM proveedores
-                WHERE @id = ''
-                   OR CONVERT(varchar(100), id) = @id
-                ORDER BY id;
+                    ID_Proveedor AS [ID],
+                    Nombre_Empresa AS [Nombre de empresa],
+                    RFC_NIT AS [RFC/NIT],
+                    Telefono AS [Teléfono],
+                    Correo
+                FROM PROVEEDORES
+                WHERE (@busqueda = ''
+                       OR CONVERT(varchar(20), ID_Proveedor) LIKE '%' + @busqueda + '%')
+                  AND (@nombre = ''
+                       OR Nombre_Empresa LIKE '%' + @nombre + '%')
+                  AND (@rfc = ''
+                       OR RFC_NIT LIKE '%' + @rfc + '%')
+                  AND (@telefono = ''
+                       OR Telefono LIKE '%' + @telefono + '%')
+                  AND (@correo = ''
+                       OR Correo LIKE '%' + @correo + '%')
+                ORDER BY ID_Proveedor;
                 """;
 
             try
@@ -78,8 +190,20 @@ namespace Practica
                 using SqlConnection cnx = new(ConnectionString);
                 using SqlCommand cmd = new(sql, cnx);
 
-                cmd.Parameters.Add("@id", SqlDbType.VarChar, 100)
-                    .Value = txt_id.Text.Trim();
+                cmd.Parameters.Add("@busqueda", SqlDbType.VarChar, 100)
+                    .Value = txtBusqueda.Text.Trim();
+
+                cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 100)
+                    .Value = txtNombreEmpresa.Text.Trim();
+
+                cmd.Parameters.Add("@rfc", SqlDbType.VarChar, 13)
+                    .Value = txtRfc.Text.Trim();
+
+                cmd.Parameters.Add("@telefono", SqlDbType.VarChar, 15)
+                    .Value = txtTelefono.Text.Trim();
+
+                cmd.Parameters.Add("@correo", SqlDbType.VarChar, 100)
+                    .Value = txtCorreo.Text.Trim();
 
                 using SqlDataAdapter adapter = new(cmd);
                 DataTable tabla = new();
@@ -106,30 +230,32 @@ namespace Practica
             }
         }
 
-        private void insertClick(object sender, EventArgs e)
+        private void DgvProveedores_CellClick(object? sender, DataGridViewCellEventArgs e)
         {
-            if (!int.TryParse(txt_id.Text.Trim(), out int id))
-            {
-                MessageBox.Show(
-                    "El ID debe ser un número entero.",
-                    "Dato inválido",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
+            if (e.RowIndex < 0 || e.RowIndex >= dgvProveedores.Rows.Count)
                 return;
-            }
 
-            if (string.IsNullOrWhiteSpace(txt_proveedores.Text) ||
-                string.IsNullOrWhiteSpace(txt_direccion.Text))
-            {
-                MessageBox.Show(
-                    "Escribe el proveedor y la dirección.",
-                    "Datos incompletos",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
+            DataGridViewRow fila = dgvProveedores.Rows[e.RowIndex];
 
+            txtBusqueda.Text = ObtenerValorCelda(fila, "ID");
+            txtNombreEmpresa.Text = ObtenerValorCelda(fila, "Nombre de empresa");
+            txtRfc.Text = ObtenerValorCelda(fila, "RFC/NIT");
+            txtTelefono.Text = ObtenerValorCelda(fila, "Teléfono");
+            txtCorreo.Text = ObtenerValorCelda(fila, "Correo");
+        }
+
+        private static string ObtenerValorCelda(DataGridViewRow fila, string nombreColumna)
+        {
+            object? valor = fila.Cells[nombreColumna].Value;
+            return valor == null || valor == DBNull.Value
+                ? string.Empty
+                : Convert.ToString(valor) ?? string.Empty;
+        }
+
+        private void InsertarClick(object sender, EventArgs e)
+        {
+            if (!ValidarDatosProveedor())
                 return;
-            }
 
             try
             {
@@ -137,156 +263,189 @@ namespace Practica
                 cnx.Open();
 
                 const string consultaExistencia = """
-                    SELECT proveedor, direccion, fecha_registro
-                    FROM proveedores
-                    WHERE id = @id;
+                    SELECT ID_Proveedor, Nombre_Empresa, RFC_NIT, Telefono, Correo
+                    FROM PROVEEDORES
+                    WHERE RFC_NIT = @rfc;
                     """;
 
                 using SqlCommand cmdExistencia = new(consultaExistencia, cnx);
-                cmdExistencia.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                cmdExistencia.Parameters.Add("@rfc", SqlDbType.VarChar, 20)
+                    .Value = txtRfc.Text.Trim();
 
                 using SqlDataReader reader = cmdExistencia.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    string proveedorActual = reader["proveedor"].ToString() ?? string.Empty;
-                    string direccionActual = reader["direccion"].ToString() ?? string.Empty;
-                    DateTime fechaActual = Convert.ToDateTime(reader["fecha_registro"]);
-
-                    string proveedorNuevo = txt_proveedores.Text.Trim();
-                    string direccionNueva = txt_direccion.Text.Trim();
-                    DateTime fechaNueva = fecha_registro.Value;
-
-                    bool datosDiferentes =
-                        !string.Equals(
-                            proveedorActual,
-                            proveedorNuevo,
-                            StringComparison.OrdinalIgnoreCase) ||
-                        !string.Equals(
-                            direccionActual,
-                            direccionNueva,
-                            StringComparison.OrdinalIgnoreCase) ||
-                        fechaActual != fechaNueva;
-
-                    reader.Close();
-
-                    if (!datosDiferentes)
-                    {
-                        MessageBox.Show(
-                            "El ID ya existe y los datos son iguales. " +
-                            "No hay cambios para realizar.",
-                            "Proveedor existente",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
-
-                        return;
-                    }
+                    int idProveedorExistente = reader.GetInt32(0);
 
                     DialogResult respuesta = MessageBox.Show(
-                        "El ID ya existe con otros datos.\n\n" +
-                        "¿Deseas modificar la información del proveedor?",
-                        "Modificar proveedor",
-                        MessageBoxButtons.OKCancel,
-                        MessageBoxIcon.Warning);
+                        "Ya existe un proveedor con ese RFC/NIT.\n\n" +
+                        "ID: " + idProveedorExistente + "\n" +
+                        "¿Deseas actualizar sus datos?",
+                        "Proveedor existente",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
 
-                    if (respuesta != DialogResult.OK)
+                    if (respuesta == DialogResult.Yes)
                     {
+                        reader.Close();
+
+                        const string sqlActualizar = """
+                            UPDATE PROVEEDORES
+                            SET Nombre_Empresa = @nombre,
+                                Telefono = @telefono,
+                                Correo = @correo
+                            WHERE ID_Proveedor = @id;
+                            """;
+
+                        using SqlCommand cmdActualizar = new(sqlActualizar, cnx);
+
+                        cmdActualizar.Parameters.Add("@id", SqlDbType.Int)
+                            .Value = idProveedorExistente;
+
+                        cmdActualizar.Parameters.Add("@nombre", SqlDbType.VarChar, 100)
+                            .Value = txtNombreEmpresa.Text.Trim();
+
+                        cmdActualizar.Parameters.Add("@telefono", SqlDbType.VarChar, 20)
+                            .Value = txtTelefono.Text.Trim();
+
+                        cmdActualizar.Parameters.Add("@correo", SqlDbType.VarChar, 100)
+                            .Value = txtCorreo.Text.Trim();
+
+                        cmdActualizar.ExecuteNonQuery();
+
                         MessageBox.Show(
-                            "La modificación fue cancelada.",
-                            "Operación cancelada",
+                            "Los datos del proveedor fueron actualizados.",
+                            "Actualización exitosa",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
-
-                        return;
                     }
-
-                    const string sqlActualizar = """
-                        UPDATE proveedores
-                        SET proveedor = @proveedor,
-                            direccion = @direccion,
-                            fecha_registro = @fecha_registro
-                        WHERE id = @id;
-                        """;
-
-                    using SqlCommand cmdActualizar = new(sqlActualizar, cnx);
-
-                    cmdActualizar.Parameters.Add("@id", SqlDbType.Int)
-                        .Value = id;
-
-                    cmdActualizar.Parameters.Add("@proveedor", SqlDbType.VarChar, 100)
-                        .Value = proveedorNuevo;
-
-                    cmdActualizar.Parameters.Add("@direccion", SqlDbType.VarChar, 200)
-                        .Value = direccionNueva;
-
-                    cmdActualizar.Parameters.Add("@fecha_registro", SqlDbType.DateTime)
-                        .Value = fechaNueva;
-
-                    cmdActualizar.ExecuteNonQuery();
-
-                    MessageBox.Show(
-                        "El proveedor fue modificado correctamente.",
-                        "Modificación exitosa",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                    CargarProveedores();
                     return;
                 }
 
                 reader.Close();
 
                 const string sqlInsertar = """
-                    INSERT INTO proveedores
-                        (id, proveedor, direccion, fecha_registro)
+                    INSERT INTO PROVEEDORES
+                        (Nombre_Empresa, RFC_NIT, Telefono, Correo)
                     VALUES
-                        (@id, @proveedor, @direccion, @fecha_registro);
+                        (@nombre, @rfc, @telefono, @correo);
                     """;
 
                 using SqlCommand cmdInsertar = new(sqlInsertar, cnx);
 
-                cmdInsertar.Parameters.Add("@id", SqlDbType.Int)
-                    .Value = id;
+                cmdInsertar.Parameters.Add("@nombre", SqlDbType.VarChar, 100)
+                    .Value = txtNombreEmpresa.Text.Trim();
 
-                cmdInsertar.Parameters.Add("@proveedor", SqlDbType.VarChar, 100)
-                    .Value = txt_proveedores.Text.Trim();
+                cmdInsertar.Parameters.Add("@rfc", SqlDbType.VarChar, 20)
+                    .Value = txtRfc.Text.Trim();
 
-                cmdInsertar.Parameters.Add("@direccion", SqlDbType.VarChar, 200)
-                    .Value = txt_direccion.Text.Trim();
+                cmdInsertar.Parameters.Add("@telefono", SqlDbType.VarChar, 20)
+                    .Value = txtTelefono.Text.Trim();
 
-                cmdInsertar.Parameters.Add("@fecha_registro", SqlDbType.DateTime)
-                    .Value = fecha_registro.Value;
+                cmdInsertar.Parameters.Add("@correo", SqlDbType.VarChar, 100)
+                    .Value = txtCorreo.Text.Trim();
 
                 cmdInsertar.ExecuteNonQuery();
 
                 MessageBox.Show(
-                    "Proveedor insertado correctamente.",
+                    "Proveedor registrado correctamente.",
                     "Éxito",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-
-                CargarProveedores();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(
-                    "Error al guardar el proveedor:\n" + ex.Message,
+                    "Error al guardar los datos del proveedor:\n" + ex.Message,
                     "Error de SQL Server",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+            finally
+            {
+                CargarProveedores();
+            }
+        }
+
+        private bool ValidarDatosProveedor()
+        {
+            string nombre = txtNombreEmpresa.Text.Trim();
+            string rfc = txtRfc.Text.Trim();
+            string telefono = txtTelefono.Text.Trim();
+            string correo = txtCorreo.Text.Trim();
+
+            if (nombre.Length == 0)
+                return MostrarError("El nombre de la empresa es obligatorio.", txtNombreEmpresa);
+
+            if (nombre.Length > 100)
+                return MostrarError("El nombre de la empresa no puede tener más de 100 caracteres.", txtNombreEmpresa);
+
+            if (rfc.Length == 0)
+                return MostrarError("El RFC/NIT es obligatorio.", txtRfc);
+
+            if (rfc.Length < 12 || rfc.Length > 13)
+                return MostrarError("El RFC/NIT debe tener entre 12 y 13 caracteres.", txtRfc);
+
+            foreach (char caracter in rfc)
+            {
+                if (!char.IsLetterOrDigit(caracter))
+                    return MostrarError("El RFC/NIT solo puede contener letras y números.", txtRfc);
+            }
+
+            if (telefono.Length == 0)
+                return MostrarError("El teléfono es obligatorio.", txtTelefono);
+
+            if (telefono.Length < 7 || telefono.Length > 15)
+                return MostrarError("El teléfono debe tener entre 7 y 15 dígitos.", txtTelefono);
+
+            foreach (char caracter in telefono)
+            {
+                if (!char.IsDigit(caracter))
+                    return MostrarError("El teléfono solo puede contener números.", txtTelefono);
+            }
+
+            if (correo.Length == 0)
+                return MostrarError("El correo electrónico es obligatorio.", txtCorreo);
+
+            if (correo.Length > 100)
+                return MostrarError("El correo electrónico no puede tener más de 100 caracteres.", txtCorreo);
+
+            try
+            {
+                _ = new MailAddress(correo);
+            }
+            catch (FormatException)
+            {
+                return MostrarError("Escribe un correo electrónico válido, por ejemplo: usuario@dominio.com.", txtCorreo);
+            }
+
+            return true;
+        }
+
+        private static bool MostrarError(string mensaje, Control control)
+        {
+            MessageBox.Show(
+                mensaje,
+                "Dato inválido",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+
+            control.Focus();
+            return false;
         }
 
         private void deleteClick(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txt_id.Text))
+            if (!int.TryParse(txtBusqueda.Text.Trim(), out int idProveedor))
             {
                 MessageBox.Show(
-                    "Escribe el ID del proveedor que deseas eliminar.",
+                    "Escribe un ID válido en el campo 'Buscar ID' para eliminar el proveedor.",
                     "Validación",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
 
+                txtBusqueda.Focus();
                 return;
             }
 
@@ -300,8 +459,8 @@ namespace Practica
                 return;
 
             const string sql = """
-                DELETE FROM proveedores
-                WHERE id = @id;
+                DELETE FROM PROVEEDORES
+                WHERE ID_Proveedor = @id;
                 """;
 
             try
@@ -310,7 +469,7 @@ namespace Practica
                 using SqlCommand cmd = new(sql, cnx);
 
                 cmd.Parameters.Add("@id", SqlDbType.Int)
-                    .Value = int.Parse(txt_id.Text);
+                    .Value = idProveedor;
 
                 cnx.Open();
 
@@ -336,14 +495,6 @@ namespace Practica
                         MessageBoxIcon.Warning);
                 }
             }
-            catch (FormatException)
-            {
-                MessageBox.Show(
-                    "El ID debe ser un número entero.",
-                    "Dato inválido",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
             catch (SqlException ex)
             {
                 MessageBox.Show(
@@ -356,10 +507,12 @@ namespace Practica
 
         private void LimpiarCampos()
         {
-            txt_id.Clear();
-            txt_proveedores.Clear();
-            txt_direccion.Clear();
-            fecha_registro.Value = DateTime.Now;
+            txtBusqueda.Clear();
+            txtNombreEmpresa.Clear();
+            txtRfc.Clear();
+            txtTelefono.Clear();
+            txtCorreo.Clear();
+            CargarProveedores();
         }
 
         private void label2_Click(object sender, EventArgs e)

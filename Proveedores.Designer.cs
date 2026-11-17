@@ -102,7 +102,7 @@
             insert.TabIndex = 6;
             insert.Text = "&Insertar";
             insert.UseVisualStyleBackColor = true;
-            insert.Click += insertClick;
+            insert.Click += InsertarClick;
             // 
             // txt_proveedores
             // 
