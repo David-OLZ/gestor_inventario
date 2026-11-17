@@ -110,6 +110,8 @@ CREATE TABLE MOVIMIENTO_INVENTARIO (
     ID_Producto INT NULL,
     Nombre_Producto VARCHAR(100) NOT NULL,
     Nombre_Proveedor VARCHAR(100) NULL,
+    Precio_Movimiento DECIMAL(10,2) NULL,
+    Stock_Actual_Movimiento INT NULL,
     ID_Empleado INT NOT NULL,
     ID_Tipo INT NOT NULL,
     CONSTRAINT CHK_Movimiento_Cantidad CHECK (Cantidad > 0),
@@ -246,12 +248,13 @@ INSERT INTO PRODUCTO (Codigo_SKU, Nombre, Descripcion, Precio, Stock_Actual, Sto
 
 -- Movimientos iniciales de auditoria de productos
 INSERT INTO MOVIMIENTO_INVENTARIO
-    (Cantidad, Motivo, ID_Producto, Nombre_Producto, ID_Empleado, ID_Tipo)
+    (Cantidad, Motivo, ID_Producto, Nombre_Producto, Precio_Movimiento,
+     Stock_Actual_Movimiento, ID_Empleado, ID_Tipo)
 VALUES
-(1, 'Registro inicial del producto', 1, 'Martillo de Una 16 oz', 1, 1),
-(1, 'Modificacion inicial del producto', 2, 'Rollo Cable Calibre 12', 1, 3),
-(1, 'Registro inicial del producto', 3, 'Caja Tornillo Tabla Roca 1 pulg', 1, 1),
-(1, 'Registro inicial del producto', 4, 'Juego Desarmadores 6 Piezas', 1, 1);
+(1, 'Registro inicial del producto', 1, 'Martillo de Una 16 oz', 185.50, 25, 1, 1),
+(1, 'Modificacion inicial del producto', 2, 'Rollo Cable Calibre 12', 1250.00, 12, 1, 3),
+(1, 'Registro inicial del producto', 3, 'Caja Tornillo Tabla Roca 1 pulg', 210.00, 4, 1, 1),
+(1, 'Registro inicial del producto', 4, 'Juego Desarmadores 6 Piezas', 320.00, 18, 1, 1);
 GO
 
 

@@ -15,12 +15,6 @@ namespace Practica
         private TextBox txtNombre = null!;
         private TextBox txtDescripcion = null!;
 
-        private const string ConnectionString =
-            "Data Source=LAPTOP-HP-DAVID\\SQLEXPRESS;" +
-            "Initial Catalog=prueba;" +
-            "Integrated Security=True;" +
-            "TrustServerCertificate=True";
-
         public Categorias()
         {
             Text = "Categorías";
@@ -153,7 +147,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 using SqlCommand comando = new(sql, conexion);
 
                 comando.Parameters.Add("@id", SqlDbType.VarChar, 20).Value = txtBuscarId.Text.Trim();
@@ -222,7 +216,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 using SqlCommand comando = new(sql, conexion);
 
                 comando.Parameters.Add("@id", SqlDbType.Int).Value = idCategoria;
@@ -264,7 +258,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 using SqlCommand comando = new(sql, conexion);
                 comando.Parameters.Add("@id", SqlDbType.Int).Value = idCategoria;
                 conexion.Open();

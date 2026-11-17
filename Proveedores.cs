@@ -17,12 +17,6 @@ namespace Practica
         private TextBox txtTelefono = null!;
         private TextBox txtCorreo = null!;
 
-        private const string ConnectionString =
-            "Data Source=LAPTOP-HP-DAVID\\SQLEXPRESS;" +
-            "Initial Catalog=prueba;" +
-            "Integrated Security=True;" +
-            "TrustServerCertificate=True";
-
         public Proveedores()
         {
             InitializeComponent();
@@ -187,7 +181,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection cnx = new(ConnectionString);
+                using SqlConnection cnx = new(DatabaseConfig.ConnectionString);
                 using SqlCommand cmd = new(sql, cnx);
 
                 cmd.Parameters.Add("@busqueda", SqlDbType.VarChar, 100)
@@ -259,7 +253,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection cnx = new(ConnectionString);
+                using SqlConnection cnx = new(DatabaseConfig.ConnectionString);
                 cnx.Open();
 
                 const string consultaExistencia = """
@@ -465,7 +459,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection cnx = new(ConnectionString);
+                using SqlConnection cnx = new(DatabaseConfig.ConnectionString);
                 using SqlCommand cmd = new(sql, cnx);
 
                 cmd.Parameters.Add("@id", SqlDbType.Int)

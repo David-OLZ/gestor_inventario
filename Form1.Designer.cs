@@ -38,6 +38,7 @@
             txtDatabase = new TextBox();
             label2 = new Label();
             txtServer = new TextBox();
+            btnBuscarMdf = new Button();
             label1 = new Label();
             cmdAceptar = new Button();
             cmdSalir = new Button();
@@ -55,11 +56,12 @@
             groupBox1.Controls.Add(txtDatabase);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(txtServer);
+            groupBox1.Controls.Add(btnBuscarMdf);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(16, 12);
+            groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(240, 207);
+            groupBox1.Size = new Size(395, 207);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Login";
@@ -82,7 +84,7 @@
             comboBox1.Items.AddRange(new object[] { "Administrador", "Empleado" });
             comboBox1.Location = new Point(67, 95);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(161, 23);
+            comboBox1.Size = new Size(283, 23);
             comboBox1.TabIndex = 8;
             // 
             // txtPassword
@@ -90,7 +92,7 @@
             txtPassword.Enabled = false;
             txtPassword.Location = new Point(67, 153);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(161, 23);
+            txtPassword.Size = new Size(283, 23);
             txtPassword.TabIndex = 7;
             // 
             // label4
@@ -108,7 +110,7 @@
             txtUser.Enabled = false;
             txtUser.Location = new Point(67, 124);
             txtUser.Name = "txtUser";
-            txtUser.Size = new Size(161, 23);
+            txtUser.Size = new Size(283, 23);
             txtUser.TabIndex = 5;
             // 
             // label3
@@ -125,7 +127,7 @@
             // 
             txtDatabase.Location = new Point(67, 66);
             txtDatabase.Name = "txtDatabase";
-            txtDatabase.Size = new Size(161, 23);
+            txtDatabase.Size = new Size(283, 23);
             txtDatabase.TabIndex = 3;
             txtDatabase.Text = "prueba";
             txtDatabase.TextChanged += txtDatabase_TextChanged;
@@ -146,9 +148,20 @@
             txtServer.BorderStyle = BorderStyle.FixedSingle;
             txtServer.Location = new Point(67, 37);
             txtServer.Name = "txtServer";
-            txtServer.Size = new Size(161, 23);
+            txtServer.Size = new Size(283, 23);
             txtServer.TabIndex = 1;
             txtServer.Text = "LAPTOP-HP-DAVID\\SQLEXPRESS";
+            txtServer.TextChanged += txtServer_TextChanged_1;
+            // 
+            // btnBuscarMdf
+            // 
+            btnBuscarMdf.Location = new Point(356, 35);
+            btnBuscarMdf.Name = "btnBuscarMdf";
+            btnBuscarMdf.Size = new Size(33, 23);
+            btnBuscarMdf.TabIndex = 10;
+            btnBuscarMdf.Text = "...";
+            btnBuscarMdf.UseVisualStyleBackColor = true;
+            btnBuscarMdf.Click += btnBuscarMdf_Click;
             // 
             // label1
             // 
@@ -162,7 +175,7 @@
             // 
             // cmdAceptar
             // 
-            cmdAceptar.Location = new Point(16, 225);
+            cmdAceptar.Location = new Point(43, 225);
             cmdAceptar.Name = "cmdAceptar";
             cmdAceptar.Size = new Size(75, 23);
             cmdAceptar.TabIndex = 1;
@@ -172,7 +185,7 @@
             // 
             // cmdSalir
             // 
-            cmdSalir.Location = new Point(169, 225);
+            cmdSalir.Location = new Point(287, 225);
             cmdSalir.Name = "cmdSalir";
             cmdSalir.Size = new Size(75, 23);
             cmdSalir.TabIndex = 2;
@@ -184,7 +197,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(269, 260);
+            ClientSize = new Size(419, 260);
             Controls.Add(cmdSalir);
             Controls.Add(cmdAceptar);
             Controls.Add(groupBox1);
@@ -203,6 +216,7 @@
 
         private GroupBox groupBox1;
         private TextBox txtServer;
+        private Button btnBuscarMdf;
         private Label label1;
         private Button cmdAceptar;
         private Button cmdSalir;

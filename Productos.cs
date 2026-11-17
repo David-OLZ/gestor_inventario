@@ -22,12 +22,6 @@ namespace Practica
         private TextBox txtProveedor = null!;
         private TextBox txtCategoria = null!;
 
-        private const string ConnectionString =
-            "Data Source=LAPTOP-HP-DAVID\\SQLEXPRESS;" +
-            "Initial Catalog=prueba;" +
-            "Integrated Security=True;" +
-            "TrustServerCertificate=True";
-
         public Productos()
         {
             Text = "Productos";
@@ -54,6 +48,7 @@ namespace Practica
             };
 
             dgvProductos.CellClick += DgvProductos_CellClick;
+            dgvProductos.DataBindingComplete += DgvProductos_DataBindingComplete;
 
             Controls.Add(dgvProductos);
             Load += Productos_Load;
@@ -205,7 +200,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 using SqlCommand comando = new(sql, conexion);
 
                 comando.Parameters.Add("@id", SqlDbType.VarChar, 20).Value = txtBuscarId.Text.Trim();
@@ -226,6 +221,8 @@ namespace Practica
                 if (dgvProductos.Columns.Contains("ID categoría"))
                     dgvProductos.Columns["ID categoría"].Visible = false;
 
+                ColorearProductosConStockBajo();
+
                 if (tabla.Rows.Count == 0)
                 {
                     MessageBox.Show(
@@ -239,6 +236,36 @@ namespace Practica
             {
                 MostrarErrorSql("consultar los productos", ex);
             }
+        }
+
+        private void ColorearProductosConStockBajo()
+        {
+            foreach (DataGridViewRow fila in dgvProductos.Rows)
+            {
+                if (fila.IsNewRow)
+                    continue;
+
+                int stockActual = Convert.ToInt32(fila.Cells["Stock actual"].Value);
+                int stockMinimo = Convert.ToInt32(fila.Cells["Stock mínimo"].Value);
+                bool stockBajo = stockActual < stockMinimo;
+
+                fila.DefaultCellStyle.BackColor = stockBajo
+                    ? Color.Red
+                    : Color.Empty;
+                fila.DefaultCellStyle.ForeColor = stockBajo
+                    ? Color.White
+                    : Color.Empty;
+                fila.DefaultCellStyle.SelectionBackColor = stockBajo
+                    ? Color.DarkRed
+                    : SystemColors.Highlight;
+                fila.DefaultCellStyle.SelectionForeColor = Color.White;
+            }
+        }
+
+        private void DgvProductos_DataBindingComplete(
+            object? sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            ColorearProductosConStockBajo();
         }
 
         private void DgvProductos_CellClick(object? sender, DataGridViewCellEventArgs e)
@@ -287,7 +314,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 using SqlCommand comando = new(sql, conexion);
 
                 comando.Parameters.Add("@sku", SqlDbType.VarChar, 30).Value = txtSku.Text.Trim();
@@ -311,6 +338,8 @@ namespace Practica
                     idProducto,
                     txtNombre.Text.Trim(),
                     idProveedor,
+                    precio,
+                    stockActual,
                     "insertar",
                     "Producto insertado desde el catálogo");
 
@@ -357,7 +386,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 conexion.Open();
                 using SqlTransaction transaccion = conexion.BeginTransaction();
                 using SqlCommand comando = new(sql, conexion, transaccion);
@@ -387,6 +416,8 @@ namespace Practica
                     idProducto,
                     txtNombre.Text.Trim(),
                     idProveedor,
+                    precio,
+                    stockActual,
                     "modificar",
                     "Producto modificado desde el catálogo");
 
@@ -453,12 +484,12 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 conexion.Open();
                 using SqlTransaction transaccion = conexion.BeginTransaction();
 
                 const string consultaNombre =
-                    "SELECT Nombre, ID_Proveedor FROM PRODUCTO WHERE ID_Producto = @id;";
+                    "SELECT Nombre, ID_Proveedor, Precio FROM PRODUCTO WHERE ID_Producto = @id;";
 
                 using SqlCommand consulta = new(consultaNombre, conexion, transaccion);
                 consulta.Parameters.Add("@id", SqlDbType.Int).Value = idProducto;
@@ -474,6 +505,7 @@ namespace Practica
 
                 string nombreProducto = lector.GetString(0);
                 int idProveedor = lector.GetInt32(1);
+                decimal precio = lector.GetDecimal(2);
                 lector.Close();
 
                 RegistrarMovimiento(
@@ -482,6 +514,8 @@ namespace Practica
                     idProducto,
                     nombreProducto,
                     idProveedor,
+                    precio,
+                    0,
                     "eliminar",
                     "Producto eliminado desde el catálogo");
 
@@ -509,14 +543,18 @@ namespace Practica
             int idProducto,
             string nombreProducto,
             int idProveedor,
+            decimal precio,
+            int stockActual,
             string tipoMovimiento,
             string motivo)
         {
             const string sql = """
                 INSERT INTO MOVIMIENTO_INVENTARIO
-                    (Cantidad, Motivo, ID_Producto, Nombre_Producto, Nombre_Proveedor, ID_Empleado, ID_Tipo)
+                    (Cantidad, Motivo, ID_Producto, Nombre_Producto, Nombre_Proveedor,
+                     Precio_Movimiento, Stock_Actual_Movimiento, ID_Empleado, ID_Tipo)
                 SELECT
-                    1, @motivo, @idProducto, @nombreProducto, pr.Nombre_Empresa, 1, tm.ID_Tipo
+                    1, @motivo, @idProducto, @nombreProducto, pr.Nombre_Empresa,
+                    @precio, @stockActual, 1, tm.ID_Tipo
                 FROM TIPO_MOVIMIENTO tm
                 INNER JOIN PROVEEDORES pr ON pr.ID_Proveedor = @idProveedor
                 WHERE tm.Nombre_Tipo = @tipoMovimiento;
@@ -527,6 +565,8 @@ namespace Practica
             comando.Parameters.Add("@idProducto", SqlDbType.Int).Value = idProducto;
             comando.Parameters.Add("@nombreProducto", SqlDbType.VarChar, 100).Value = nombreProducto;
             comando.Parameters.Add("@idProveedor", SqlDbType.Int).Value = idProveedor;
+            comando.Parameters.Add("@precio", SqlDbType.Decimal).Value = precio;
+            comando.Parameters.Add("@stockActual", SqlDbType.Int).Value = stockActual;
             comando.Parameters.Add("@tipoMovimiento", SqlDbType.VarChar, 20).Value = tipoMovimiento;
 
             if (comando.ExecuteNonQuery() == 0)

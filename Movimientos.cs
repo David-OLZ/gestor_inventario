@@ -10,12 +10,6 @@ namespace Practica
     {
         private readonly DataGridView dgv;
 
-        private const string ConnectionString =
-            "Data Source=LAPTOP-HP-DAVID\\SQLEXPRESS;" +
-            "Initial Catalog=prueba;" +
-            "Integrated Security=True;" +
-            "TrustServerCertificate=True";
-
         public Movimientos()
         {
             Text = "Movimientos del inventario";
@@ -65,7 +59,9 @@ namespace Practica
                     m.Fecha_Hora AS [Fecha],
                     tm.Nombre_Tipo AS [Tipo de movimiento],
                     COALESCE(m.Nombre_Producto, p.Nombre) AS [Producto],
-                    COALESCE(m.Nombre_Proveedor, pr.Nombre_Empresa, 'Proveedor no disponible') AS [Proveedor]
+                    COALESCE(m.Nombre_Proveedor, pr.Nombre_Empresa, 'Proveedor no disponible') AS [Proveedor],
+                    m.Precio_Movimiento AS [Precio],
+                    m.Stock_Actual_Movimiento AS [Stock actual]
                 FROM MOVIMIENTO_INVENTARIO m
                 INNER JOIN TIPO_MOVIMIENTO tm ON m.ID_Tipo = tm.ID_Tipo
                 LEFT JOIN PRODUCTO p ON m.ID_Producto = p.ID_Producto
@@ -75,7 +71,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 using SqlCommand comando = new(sql, conexion);
                 using SqlDataAdapter adaptador = new(comando);
 

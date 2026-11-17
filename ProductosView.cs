@@ -15,12 +15,6 @@ namespace Practica
         private TextBox txtProveedor = null!;
         private TextBox txtCategoria = null!;
 
-        private const string ConnectionString =
-            "Data Source=LAPTOP-HP-DAVID\\SQLEXPRESS;" +
-            "Initial Catalog=prueba;" +
-            "Integrated Security=True;" +
-            "TrustServerCertificate=True";
-
         public ProductosView()
         {
             Text = "Productos - Solo lectura";
@@ -96,6 +90,8 @@ namespace Practica
                 MultiSelect = false
             };
 
+            dgv.DataBindingComplete += Dgv_DataBindingComplete;
+
             Controls.Add(filtros);
             Controls.Add(dgv);
             Load += ProductosView_Load;
@@ -132,7 +128,7 @@ namespace Practica
 
             try
             {
-                using SqlConnection conexion = new(ConnectionString);
+                using SqlConnection conexion = new(DatabaseConfig.ConnectionString);
                 using SqlCommand comando = new(sql, conexion);
                 comando.Parameters.Add("@id", SqlDbType.VarChar, 20).Value = txtId.Text.Trim();
                 comando.Parameters.Add("@sku", SqlDbType.VarChar, 30).Value = txtSku.Text.Trim();
@@ -155,6 +151,31 @@ namespace Practica
             {
                 MessageBox.Show("Error al consultar los productos:\n" + ex.Message,
                     "Error de SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Dgv_DataBindingComplete(
+            object? sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow fila in dgv.Rows)
+            {
+                if (fila.IsNewRow)
+                    continue;
+
+                int stockActual = Convert.ToInt32(fila.Cells["Stock actual"].Value);
+                int stockMinimo = Convert.ToInt32(fila.Cells["Stock mínimo"].Value);
+                bool stockBajo = stockActual < stockMinimo;
+
+                fila.DefaultCellStyle.BackColor = stockBajo
+                    ? Color.Red
+                    : Color.Empty;
+                fila.DefaultCellStyle.ForeColor = stockBajo
+                    ? Color.White
+                    : Color.Empty;
+                fila.DefaultCellStyle.SelectionBackColor = stockBajo
+                    ? Color.DarkRed
+                    : SystemColors.Highlight;
+                fila.DefaultCellStyle.SelectionForeColor = Color.White;
             }
         }
 
