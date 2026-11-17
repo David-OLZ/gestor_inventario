@@ -1,0 +1,333 @@
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Practica.exe
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Practica.deps.json
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Practica.runtimeconfig.json
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Practica.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Practica.pdb
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.Form1.resources
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.GenerateResource.cache
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfoInputs.cache
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfo.cs
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.CoreCompileInputs.cache
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.dll
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\refint\Practica.dll
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.pdb
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.genruntimeconfig.cache
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\ref\Practica.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LCCU\source\repos\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.AssemblyReference.cache
+C:\Users\LCCU\source\repos\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.Up2Date
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Practica.exe
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Practica.deps.json
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Practica.runtimeconfig.json
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Practica.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Practica.pdb
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Public\Documents\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.AssemblyReference.cache
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.Form1.resources
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.GenerateResource.cache
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfoInputs.cache
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfo.cs
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.CoreCompileInputs.cache
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.Up2Date
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.dll
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\refint\Practica.dll
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.pdb
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\Practica.genruntimeconfig.cache
+C:\Users\Public\Documents\Practica\Practica\obj\Debug\net10.0-windows\ref\Practica.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Practica.exe
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Practica.deps.json
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Practica.runtimeconfig.json
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Practica.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Practica.pdb
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LCCU\Desktop\Practica\Practica\bin\Debug\net10.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.AssemblyReference.cache
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.Form1.resources
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.GenerateResource.cache
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfoInputs.cache
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfo.cs
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.CoreCompileInputs.cache
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.csproj.Up2Date
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.dll
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\refint\Practica.dll
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.pdb
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.genruntimeconfig.cache
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\ref\Practica.dll
+C:\Users\LCCU\Desktop\Practica\Practica\obj\Debug\net10.0-windows\Practica.MDI_Principal.resources
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Practica.exe
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Practica.deps.json
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Practica.runtimeconfig.json
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Practica.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Practica.pdb
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\bin\Debug\net10.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.csproj.AssemblyReference.cache
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.MDI_Principal.resources
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.csproj.GenerateResource.cache
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfoInputs.cache
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfo.cs
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.csproj.CoreCompileInputs.cache
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.csproj.Up2Date
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\refint\Practica.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.pdb
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.genruntimeconfig.cache
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\ref\Practica.dll
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.login.resources
+C:\Users\sny_c\Downloads\Practica (1)\Practica\obj\Debug\net10.0-windows\Practica.Proveedores.resources
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.exe
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.deps.json
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.runtimeconfig.json
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.pdb
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.csproj.AssemblyReference.cache
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.login.resources
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.MDI_Principal.resources
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.Proveedores.resources
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.csproj.GenerateResource.cache
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfoInputs.cache
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfo.cs
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.csproj.CoreCompileInputs.cache
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.csproj.Up2Date
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\refint\Practica.dll
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.pdb
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.genruntimeconfig.cache
+C:\Users\gerar\OneDrive\Documents\Escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\ref\Practica.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.exe
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.deps.json
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.runtimeconfig.json
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Practica.pdb
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Bcl.Cryptography.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Extensions.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Data.SqlClient.Internal.Logging.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\unix\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\win\lib\net9.0\Microsoft.Data.SqlClient.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\bin\Debug\net10.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.csproj.AssemblyReference.cache
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.login.resources
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.MDI_Principal.resources
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.Proveedores.resources
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.csproj.GenerateResource.cache
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfoInputs.cache
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.AssemblyInfo.cs
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.csproj.CoreCompileInputs.cache
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.csproj.Up2Date
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\refint\Practica.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.pdb
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.genruntimeconfig.cache
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\ref\Practica.dll
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.Productos.resources
+C:\Users\gerar\OneDrive\Documents\MIS_DOCUMENTOS\escuela\semestre_7\base_de_datos_2\practicas\Practica\obj\Debug\net10.0-windows\Practica.CategoriasView.resources
